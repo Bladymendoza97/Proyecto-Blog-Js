@@ -322,6 +322,7 @@ nav #menu li:hover{
 /* 1.4 MAQUETAR SIDEBAR */
 
 #slider{
+  padding: 0;
   position: relative !important;
   z-index: 0 !important;
 }
