@@ -5,14 +5,14 @@
   text-decoration: none !important;
   list-style: none !important;
 }
-body {
+/* body {
   background-attachment: fixed !important;
   background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
   font-family: "arial";
   
-}
+} */
 
 #global {
   width: 75%;
@@ -29,7 +29,7 @@ body {
   align-items: center !important;
   justify-content: center;
   letter-spacing: 4px;
-  background: #235e3d;
+  /* background: #235e3d; */
   text-align: center;
   height: 80px;
   text-transform: uppercase;
@@ -95,7 +95,7 @@ nav #brand {
   line-height: 70px;
   display: flex;
   justify-content: flex-start;
-  font-size: 30px;
+  font-size: 2.1rem !important;
   font-weight: bold;
 }
 
@@ -128,9 +128,9 @@ nav #menu li a {
   font-weight: 200;
 }
 
-nav #menu li:hover{
+/* nav #menu li:hover{
   background: #235e3d !important;
-}
+} */
 
 
 #toggle {
@@ -138,8 +138,8 @@ nav #menu li:hover{
   right: 18px;
   top: 46px;
   z-index: 999;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   float: right;
   transition: all 0.5s ease-out;
@@ -233,18 +233,18 @@ nav #menu li:hover{
   }
 
   #global {
+    opacity: 0.7 !important;
     width: 100%;
-    /* margin: 0px auto; */
-    /* margin-top: 30px; */
     padding: 0 !important;
     background: #eaeaea;
-    opacity: 0.7;
     box-shadow: 0px 0px 2px grey;
   }
  
   #content{
     padding: 15px !important;
   }
+
+
  
 }
 
@@ -297,17 +297,19 @@ nav #menu li:hover{
   margin-top: 10px !important;
   margin-bottom: 22px !important;
   text-decoration: none;
-  background: #235e3d;
+  /* background: #235e3d; */
   font-size: 15px;
   color: #eaeaea;
   padding: 14px;
   border-radius: 29px;
   font-weight: 700;
   transition: all 0.5s;
+  border: none !important;
+  
 }
 
 .button-more:hover {
-  background: #333;
+  background: #333 !important;
   color: #eaeaea;
   text-decoration: none;
 }
@@ -407,5 +409,31 @@ footer small{
 @media (max-width: 768px){
   footer small{
     font-size: 1.2rem !important;
+  }
+}
+
+
+/* 1.7 CAMBIADOR DE TEMAS */
+
+#selector-theme{
+  position: fixed !important;
+  top: 35% !important;
+  /* right: 37.5% !important; */
+  z-index: 1;
+  background: rgba(51, 51, 51, 0.7);
+  width: 50px;
+  height: 100px;
+}
+
+@media (max-width: 768px){
+
+  #selector-theme{
+    position: fixed !important;
+    top: 0% !important;
+    right: 33.5% !important;
+    z-index: 1;
+    background: rgba(51, 51, 51, 0.7);
+    width: 130px;
+    height: 33px;
   }
 }

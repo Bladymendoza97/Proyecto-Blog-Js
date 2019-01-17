@@ -5,6 +5,8 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <meta http-equiv="X-UA-Compatible" content="ie=edge">
      <link rel="stylesheet" href="css/style.css">
+     <link id="theme" rel="stylesheet" href="css/green.css">
+     <!-- <link rel="stylesheet" href="css/blue.css"> -->
 
      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
@@ -24,6 +26,13 @@
     
 <title>Proyecto Completo con JS, HTML, CSS, JQUERY</title>
 </head>
+
+<section id="selector-theme">
+     <article id="to-green"></article>
+     <article id="to-blue"></article>
+
+</section>
+
 <body style="background-image:url(img/clouds-dawn-dusk-867716.jpg)">
      
 <!-- 1.0 ESTRUCTRURA HTML -->
@@ -137,23 +146,52 @@
            
           <article id="posts" class="borde-article col-sm-6 col-md-6">
 
-               <!-- post cargado desde un json -->
+                    <section class="post">
+                              <h2>Angular Cli</h2>
+                              <small class="fecha"> Publicado el 17 de enero 2019</small>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, facilis labore natus consectetur autem sit omnis dolor maxime nulla laudantium itaque sed ipsa eos iusto sint commodi quis asperiores tempore laboriosam assumenda dolorem id. Hic provident quaerat minima, excepturi soluta culpa dolore ex harum illum, corrupti libero recusandae molestias fugit atque, veritatis sequi ut minus nesciunt doloribus? Culpa quam dolore quas reiciendis ratione! Blanditiis facilis quis quia laboriosam. Facilis molestias consectetur consequuntur accusamus est adipisci ducimus voluptate eos, nobis quam natus doloremque. Molestiae, molestias omnis?</p>
+                              <a href="#" class="button-more">Leer más</a>
+                          </section>
 
-                
+                <br>
                <article id="posts" class="second-p">
      
-                   <!-- post cargado desde un json -->
+                         <section class="post">
+                                   <h2>Node Js</h2>
+                                   <small class="fecha"> Publicado el 17 de enero 2019</small>
+                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, facilis labore natus consectetur autem sit omnis dolor maxime nulla laudantium itaque sed ipsa eos iusto sint commodi quis asperiores tempore laboriosam assumenda dolorem id. Hic provident quaerat minima, excepturi soluta culpa dolore ex harum illum, corrupti libero recusandae molestias fugit atque, veritatis sequi ut minus nesciunt doloribus? Culpa quam dolore quas reiciendis ratione! Blanditiis facilis quis quia laboriosam. Facilis molestias consectetur consequuntur accusamus est adipisci ducimus voluptate eos, nobis quam natus doloremque. Molestiae, molestias omnis?</p>
+                                   <a href="#" class="button-more">Leer más</a>
+                               </section>
+
+                               <br>
      
                </article>
                
           </article>
-
-
+ 
 
           <!-- 1.4 MAQUETAR SIDEBAR-->
            <!-- css externo -->
            <aside id="sidebar" class="borde-article col-xs-12 col-sm-6 col-md-6" >
  
+                    <section id="publicar-articulo">
+                              <h4 style="background-image:url(img/lines.png)"><span>Publicar Artículo</span></h4>
+                                  <form action="" id="publicar">
+                                         <label for="" class="title-login">Título</label>
+                                         <input type="text" name="titulo" class="form-control">
+
+                                         <label for="" class="title-login">Contenido</label>
+                                         <textarea type="text" name="contenido" class="md-textarea form-control" rows="3"></textarea>
+                   
+                                         <input type="submit" value="Publicar" class="button-more" id="button-publicar-articulo">
+                   
+                                  </form>
+                   
+                              </section>
+
+
+
+
            <section id="about">
            <h4 style="background-image:url(img/lines.png)"><span>¿Quien soy?</span></h4>
            <section class="row img-article">
