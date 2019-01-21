@@ -23,17 +23,11 @@
      <!-- Moment Js -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/locale/es.js"></script>
-    
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.28/dist/sweetalert2.all.min.js"></script>
 <title>Proyecto Completo con JS, HTML, CSS, JQUERY</title>
 </head>
-
-<section id="selector-theme">
-     <article id="to-green"></article>
-     <article id="to-blue"></article>
-
-</section>
-
+ 
 <body style="background-image:url(img/astronomy-cosmos-dark-733475.jpg)">
      
 <!-- 1.0 ESTRUCTRURA HTML -->
@@ -175,6 +169,48 @@
            <!-- css externo -->
            <aside id="sidebar" class="borde-article col-xs-12 col-sm-6 col-md-6" >
  
+                <section id="login">
+                <h4 style="background-image:url(img/lines.png)"><span>Identifícate</span></h4>
+                    <form action="">
+                           <label for="" class="title-login">Nombre</label>
+                           <input type="text" name="name" class="form-control" id="form_name">
+      
+                           <label for="" class="title-login">Apellido</label>
+                           <input type="text" name="apellido" class="form-control" id="form_apellido">
+      
+                           <label for="" class="title-login">Contraseña</label>
+                           <input type="password" name="password" class="form-control" id="form_pass">
+      
+                           <input type="submit" value="Registrarse" class="button-more" id="button-login">
+      
+                    </form>
+      
+                </section>
+
+                <br>
+                <br>
+                <section id="perfil-login">
+                     <article class="borde-login">
+
+                     </article>
+
+                </section>
+
+                <br>
+                <br>
+
+
+          
+
+                <section id="about">
+                <h4 style="background-image:url(img/lines.png)"><span>¿Quien soy?</span></h4>
+                <section class="row img-article">
+                <img src="img/adult-app-developer-business-1181244.jpg" alt="" class="col-xs-12 col-sm-12 col-md-8 img-responsive">
+               </section>
+                <p class="text-sidebar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo consequuntur vel quidem optio veniam eaque repellendus distinctio? Deserunt labore iusto, incidunt eaque odio facere saepe rerum. Natus cum in rem neque officiis dignissimos odit quis quas, ut quasi tenetur ipsa nam suscipit molestiae vel repellendus debitis ipsam nobis, optio accusantium!</p>
+      
+                </section>
+
                     <section id="publicar-articulo">
                               <h4 style="background-image:url(img/lines.png)"><span>Publicar Artículo</span></h4>
                                   <form action="" id="publicar">
@@ -193,36 +229,8 @@
 
 
 
-           <section id="about">
-           <h4 style="background-image:url(img/lines.png)"><span>¿Quien soy?</span></h4>
-           <section class="row img-article">
-           <img src="img/adult-app-developer-business-1181244.jpg" alt="" class="col-xs-12 col-sm-12 col-md-8 img-responsive">
-          </section>
-           <p class="text-sidebar">Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo consequuntur vel quidem optio veniam eaque repellendus distinctio? Deserunt labore iusto, incidunt eaque odio facere saepe rerum. Natus cum in rem neque officiis dignissimos odit quis quas, ut quasi tenetur ipsa nam suscipit molestiae vel repellendus debitis ipsam nobis, optio accusantium!</p>
- 
-           </section>
 
 
-           <section id="login">
-           <h4 style="background-image:url(img/lines.png)"><span>Identifícate</span></h4>
-               <form action="">
-                      <label for="" class="title-login">Nombre</label>
-                      <input type="text" name="name" class="form-control">
-
-                      <label for="" class="title-login">Apellido</label>
-                      <input type="text" name="apellido" class="form-control">
-
-                      <label for="" class="title-login">Correo</label>
-                      <input type="text" name="email" class="form-control">
-
-                      <label for="" class="title-login">Contraseña</label>
-                      <input type="password" name="password" class="form-control">
-
-                      <input type="submit" value="Registrarse" class="button-more" id="button-login">
-
-               </form>
-
-           </section>
  
            </aside>   
            

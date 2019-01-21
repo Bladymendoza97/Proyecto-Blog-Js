@@ -63,6 +63,7 @@ $('#publicar').submit(function(e){
 
 
 
+
 /* 1.7 SELECTOR DE TEMAS */
 
 
@@ -89,3 +90,62 @@ $('.subir').click(function(e){
 
    return false;
 });
+
+
+
+
+/* 1.9 IDENTIFICACION LOCALSTORAGE*/
+
+
+$('#login form').submit(function(){
+
+ 
+
+  var form_name =  $('#form_name').val();
+  var form_apellido = $('#form_apellido').val()
+   
+  localStorage.setItem('form_name', form_name);
+  localStorage.setItem('form_apellido', form_apellido);
+  
+});
+
+var form_name = localStorage.getItem('form_name');
+var form_apellido = localStorage.getItem('form_apellido');
+
+if (form_name != null && form_name != undefined || form_apellido != null && form_apellido != undefined ) {
+
+  swal({
+    position: 'center',
+    type: 'success',
+    title: 'Buen trabajo!',
+    text: 'Te has Registrado!',
+    showConfirmButton: false,
+    timer: 3000
+  })
+  
+  
+  var about_p = $('#perfil-login article');
+  about_p.html('<br><h2>Bienvenido <br> '+ form_name + "  " + form_apellido + '</h2>').addClass('perfil_login') 
+
+  about_p.append("<br><button type='text' id='logout'>Cerrar Sessión</button>");
+  $('#login form').hide();
+  
+  $('#logout').click(function(){
+
+    about_p.removeClass('borde-login');
+    
+    localStorage.clear();
+    location.reload();
+    
+  });
+}
+
+// else{
+//   swal({
+//     position: 'center',
+//     type: 'error',
+//     title: 'Vuelva a Intentarlo',
+//     text: 'Los Campos no son validos!',
+//     footer: '<a href="https://www.youtube.com">Por qué tengo este problema?</a>'
+//   })
+// }
