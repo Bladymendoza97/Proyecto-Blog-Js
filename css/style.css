@@ -265,6 +265,7 @@ nav #menu li:hover{
 #posts {
   text-align: justify;
   text-align: center;
+  padding: 1rem !important;
   /* margin-top: 45px !important; */
 }
 
@@ -329,7 +330,7 @@ nav #menu li:hover{
 #sidebar {
   text-align: center;
   border: 1px solid #d2d2d2;
-  padding: 10px;
+  padding: 1rem !important;
 }
 .text-sidebar {
   text-align: justify;
@@ -485,3 +486,61 @@ footer small{
      
   }
 }
+
+
+/* 2.0 ACORDEON */
+
+
+.collapse-card {
+  background-color: white !important;
+  border-bottom: 1px solid #eee !important;
+  color: #333 !important;
+  padding: 5rem 1.6rem !important;
+  -webkit-transition: 0.4s !important;
+  -moz-transition: 0.4s !important;
+  -o-transition: 0.4s !important;
+  transition: 0.4s !important;
+}
+
+.collapse-card .title strong {
+  font-size: 1.8rem !important;
+  display: block;
+  margin-left: 4rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.collapse-card .body {
+  display: none;
+  padding: 2rem 0rem !important;
+  text-align: justify;
+}
+
+.collapse-card .title {
+  font-size: 1.3rem !important;
+}
+
+.expand-icon{
+  font-size: 10px;
+}
+
+@media (max-width: 768px){
+  .collapse-card {
+    background-color: white !important;
+    border-bottom: 1px solid #eee !important;
+    cursor: pointer !important;
+    color: #777 !important;
+    padding: 5rem 1.1rem!important;
+    -webkit-transition: 0.4s !important;
+    -moz-transition: 0.4s !important;
+    -o-transition: 0.4s !important;
+    transition: 0.4s !important;
+  }
+
+  .collapse-card .title strong {
+    font-size: 1.3rem;
+   
+  }
+}
+

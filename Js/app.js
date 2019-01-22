@@ -12,57 +12,53 @@ $('#toggle').click(function(){
 /* 1.6 LISTADO DINAMICO ARTICULOS */
 
 
-$('#publicar').submit(function(e){
+//NO FUNCIONA CORRECTAMENTE
+$('#publicar-articulo form').submit(function(e){
+
+  e.preventDefault();
   
-  
-  e.preventDefault();//
-
-
-
     
-    var post = [
-     {
-       title:$('input[name="titulo"]').val(),
-       date: 'Publicado el ' + moment().date() + ' de ' + moment().format('MMMM YYYY') + '<br>' + 'a las ' + moment().format('h:mm a') , //libreria moment js
-       content:$('textarea[name="contenido"]').val()  
+  var article = 
+   {
+     title:$('input[name="titulo"]').val(),
+     date: 'Publicado el ' + moment().date() + ' de ' + moment().format('MMMM YYYY') + '<br>' + 'a las ' + moment().format('h:mm a') , //libreria moment js
+     content:$('textarea[name="contenido"]').val()  
+ 
+   };
+
+
+   var enviado_json = localStorage.setItem("article", JSON.stringify(article));
    
-     },
- 
-    ];
+   console.log(enviado_json);
+
+  
+   
+   var datos_obtenidos = JSON.parse(localStorage.getItem("article"));
+
+   console.log(datos_obtenidos);
 
 
-    console.log(post[0]);
-    
+   for (var i in localStorage) {
+
+     var post = `
+     <section class="post">
+     <h2>${article.title}</h2>
+     <small class="fecha">${article.date}</small>
+     <p>${article.content}</p>
+     <a href="#" class="button-more">Leer más</a>
+     </section>
      
-     post.forEach((item, index) => {
-       var post = `
-       <section class="post">
-       <h2>${item.title}</h2>
-       <small class="fecha">${item.date}</small>
-       <p>${item.content}</p>
-       <a href="#" class="button-more">Leer más</a>
-       </section>
-       
-       `;     
-       $('#posts').append(post);//Muestra los articulos en el body
-       
-       
-      });
-      
-      
-      localStorage.setItem(post[0].title, JSON.stringify(post[0]));
-  
-  /*Almacena la informacion de los articulos en el LocalStorage */
- 
-  $('input[type="text"]').val('');//Borra los campos una vez se ha dado click en el boton
-  $('textarea[type="text"]').val('');//Borra los campos una vez se ha dado click en el boton
+     `;     
+     $('#posts').append(post);//Muestra los articulos en el body
+     
+     
+   };
+
+   return false;
+  });
   
   
-  return false;
-});
-
-
-
+  
 
 /* 1.7 SELECTOR DE TEMAS */
 
@@ -103,10 +99,11 @@ $('#login form').submit(function(){
 
   var form_name =  $('#form_name').val();
   var form_apellido = $('#form_apellido').val()
-   
-  localStorage.setItem('form_name', form_name);
-  localStorage.setItem('form_apellido', form_apellido);
+ 
+    localStorage.setItem('form_name', form_name);
+    localStorage.setItem('form_apellido', form_apellido);
   
+   
 });
 
 var form_name = localStorage.getItem('form_name');
@@ -123,29 +120,33 @@ if (form_name != null && form_name != undefined || form_apellido != null && form
     timer: 3000
   })
   
-  
   var about_p = $('#perfil-login article');
   about_p.html('<br><h2>Bienvenido <br> '+ form_name + "  " + form_apellido + '</h2>').addClass('perfil_login') 
 
   about_p.append("<br><button type='text' id='logout'>Cerrar Sessión</button>");
   $('#login form').hide();
   
-  $('#logout').click(function(){
-
-    about_p.removeClass('borde-login');
-    
-    localStorage.clear();
-    location.reload();
-    
-  });
 }
 
-// else{
-//   swal({
-//     position: 'center',
-//     type: 'error',
-//     title: 'Vuelva a Intentarlo',
-//     text: 'Los Campos no son validos!',
-//     footer: '<a href="https://www.youtube.com">Por qué tengo este problema?</a>'
-//   })
-// }
+
+$('#logout').click(function(){
+
+
+  
+  localStorage.clear();
+  location.reload();
+
+  alert('Sessión Finalizada')
+});
+
+// Swal({
+  //   position: 'center',
+  //   type: 'success',
+  //   title: 'Sessión finalizada',
+  //   showConfirmButton: false,
+  //   timer: 3000
+  // })
+ 
+
+/* 2.0 ACORDEON*/
+ 
