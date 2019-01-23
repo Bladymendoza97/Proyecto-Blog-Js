@@ -128,6 +128,7 @@ if (form_name != null && form_name != undefined || form_apellido != null && form
   
 }
 
+ 
 
 $('#logout').click(function(){
 
@@ -149,4 +150,10 @@ $('#logout').click(function(){
  
 
 /* 2.0 ACORDEON*/
+
+/*2.1 RELOJ DINAMICO*/ 
+
+
+
+
  
