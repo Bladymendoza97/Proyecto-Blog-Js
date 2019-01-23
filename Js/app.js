@@ -153,6 +153,17 @@ $('#logout').click(function(){
 
 /*2.1 RELOJ DINAMICO*/ 
 
+$(document).ready(function(){
+
+  $.validate({
+    lang: 'es',
+    validateOnBlur : true , // inhabilita la validación cuando la entrada pierde focus 
+    errorMessagePosition : 'top', // En lugar de 'inline', que es el valor predeterminado 
+    scrollToTopOnError : true ,
+  });
+
+});
+
 
 
 

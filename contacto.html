@@ -11,17 +11,16 @@
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
      <!-- Jquery Library-->
      <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
      <!-- Latest compiled and minified CSS -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
      <!-- Optional theme -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">     
      <!-- Latest compiled and minified JavaScript -->
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
- 
      <!-- Sweet Alert -->
      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.28/dist/sweetalert2.all.min.js"></script>
-
+     <!-- Plugin validation jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 <title>Proyecto Completo con JS, HTML, CSS, JQUERY</title>
 </head>
  
@@ -72,8 +71,9 @@
           </section>
      </nav>
 
-          <section id="resize" style="background-image:url(img/astronomy-cosmos-dark-733475.jpg)">
+          <section id="resize">
                <ul id="menu">
+                    <li id="perfil-login"><article class="borde-login">hola</article></li>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="clock.html">Clock</a></li>
                     <li><a href="about.html">About</a></li>
@@ -103,26 +103,26 @@
 
                <section id="check-in">
 
-                        <form action="">
-                               <label for="name" class="title-login">Nombre</label>
-                               <input type="text" name="name" class="form-control">
-          
-                               <label for="apellido" class="title-login">Apellido</label>
-                               <input type="text" name="apellido" class="form-control">
+                        <form action="" method="POST" id="form-contact">
+                              <label for="name" class="title-login">Nombre</label>
+                              <input type="text" name="name" class="form-control" data-validation-help="Som help info..." data-validation="alphanumeric" data-validation-error-msg = "El nombre de usuario debe ser un valor alfanumérico (3-12 caracteres)" >
 
-                               <label for="email" class="title-login">Email</label>
-                               <input type="email" name="email" class="form-control">
-          
-                               <label for="sexo" class="title-login">Sexo</label>
-                               <select name="select" class="form-control">
-                                    <option value="men" class="form-control">Masculino</option>
-                                    <option value="women" class="form-control">Femenino</option>
-                               </select>
- 
-                               <label for="direccion" class="title-login">Dirección</label>
-                               <textarea type="text" name="direccion" class="md-textarea form-control" rows="3"></textarea>
-         
-                               <input type="submit" value="Registrarse" class="button-more">
+                              <label for="apellido" class="title-login">Apellido</label>
+                              <input type="text" name="apellido" class="form-control" data-validation="alphanumeric" data-validation-error-msg = "El apellido debe ser un valor alfanumérico (3-12 caracteres)">
+
+                              <label for="email" class="title-login">Email</label>
+                              <input type="email" name="email" class="form-control" data-validation="email" datos-validación-error-msg = "No ingresó un correo electrónico válido">
+
+                              <label for="sexo" class="title-login">Sexo</label>
+                              <select name="select" class="form-control" data-validation="required" >
+                                   <option value="men" class="form-control">Masculino</option>
+                                   <option value="women" class="form-control">Femenino</option>
+                              </select>
+
+                              <label for="direccion" class="title-login">Dirección</label>
+                              <textarea type="text" name="direccion" class="md-textarea form-control" rows="3" data-validation="alphanumeric" datos-validación-error-msg = "Ingrese caracteres validos"></textarea>
+
+                              <input type="submit" value="Enviar" class="button-more">
           
                         </form>
           

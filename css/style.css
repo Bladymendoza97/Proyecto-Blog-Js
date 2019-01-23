@@ -17,8 +17,8 @@ body {
 #global {
   width: 75%;
   margin: 0px auto;
-  margin-top: 30px;
-  padding: 30px !important;
+  /* margin-top: 30px; */
+  padding: 15px 30px !important;
   background: #eaeaea;
   opacity: 0.7;
   box-shadow: 0px 0px 2px grey;
@@ -84,7 +84,7 @@ h1 {
 nav {
   width: 100%;
   background: #333;
-  height: 70px;
+  height: 65px;
   position: static;
   z-index: 1;
 }
@@ -92,10 +92,10 @@ nav {
 nav #brand {
   float: left;
   /* margin-left: 84px; */
-  line-height: 70px;
+  line-height: 65px;
   display: flex;
   justify-content: flex-start;
-  font-size: 30px;
+  font-size: 2.4rem;
   font-weight: bold;
 }
 
@@ -118,7 +118,7 @@ nav #menu li {
   display: inline-block;
   padding: 0px 20px;
   cursor: pointer;
-  line-height: 70px;
+  line-height: 65px;
   position: relative;
   transition: all 0.5s ease-out;
 }
@@ -166,14 +166,11 @@ nav #menu li:hover{
 }
 
 #resize {
-  z-index: 1;
+  z-index: 1 !important;
   top: 0px;
   right: 0px;
-  position: absolute;
-   background-attachment: fixed !important;
-   background-size: cover !important;
-   background-position: center center !important;
-   background-repeat: no-repeat !important;
+  position: absolute !important;
+  background: #333 !important;
   width: 100%;
   height: 100%;
   visibility: hidden;
@@ -203,7 +200,7 @@ nav #menu li:hover{
  
 
 #resize li:nth-child(1){
-  margin-top: 90px;
+  margin-top: 73px;
 }
 
 #resize #menu li a {
@@ -219,7 +216,7 @@ nav #menu li:hover{
   #toggle {
     visibility: visible;
     opacity: 1;
-    margin-top: 6px;
+    margin-top: -28px;
   }
 
   nav #brand {
@@ -360,8 +357,8 @@ nav #menu li:hover{
 }
 
 .title-login {
-  margin-bottom: 10px;
-  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-top: 30px;
   font-size: 17px;
 }
 .form-control {
