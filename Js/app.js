@@ -1,63 +1,157 @@
 'use strict'
  
-// Toggle menu - responsive 
-$('#toggle').click(function(){
-     $(this).toggleClass('on');
-     $('#resize').toggleClass('active');
-});
+
+
+ // Initialize Firebase
+ var config = {
+  apiKey: "AIzaSyDkHeZiIg5z0BdQS1buHEOhCjV8M36G6fQ",
+  authDomain: "pruebaarticulos.firebaseapp.com",
+  databaseURL: "https://pruebaarticulos.firebaseio.com",
+  projectId: "pruebaarticulos",
+  storageBucket: "pruebaarticulos.appspot.com",
+  messagingSenderId: "297787975019"
+};
+firebase.initializeApp(config);
+
 
 
 
 
 /* 1.6 LISTADO DINAMICO ARTICULOS */
 
-
-//NO FUNCIONA CORRECTAMENTE
-$('#publicar-articulo form').submit(function(e){
-
-  e.preventDefault();
+function getID(id){
   
-    
-  var article = 
-   {
-     title:$('input[name="titulo"]').val(),
-     date: 'Publicado el ' + moment().date() + ' de ' + moment().format('MMMM YYYY') + '<br>' + 'a las ' + moment().format('h:mm a') , //libreria moment js
-     content:$('textarea[name="contenido"]').val()  
+  return document.getElementById(id).value;
+  
+}
+
+function inputsTask(id, result){
+
+  return document.getElementById(id).value = result;
+  
+}
+
+function innerHTML(id, result){
+  
+  return document.getElementById(id).innerHTML += result;
+}
+
+
+function arrayJSON(id, description){
+  var data = {
+   
+    id : id,
+    description : description
+  };
+
+  return data;
+}
+
+//EN PROCESO
+$('#publicar-articulo form').submit(function(){
  
-   };
+  insertTask();
+  
+  function insertTask() {
+    
+    var id = getID("id");
+    var description = getID("description");
+  
+    if (id.length == 0 || description.length == 0) {
+      alert('Estos campos están vacíos')
+    }else{
+      var arrayData = arrayJSON(id, description);
+     
+      var task = firebase.database().ref("task/" + id);
+      task.set(arrayData);
+      alert('Ha sido guardado correctamente');
+      inputsTask("id", "");
+      inputsTask("description", "");
+
+    }
+    
+  }
+
+  return false;
 
 
-   var enviado_json = localStorage.setItem("article", JSON.stringify(article));
+});
+
+
+  function article(id, description) {
+
+    return  `
    
-   console.log(enviado_json);
+    <section class="post">
+         <h2>${id}</h2>
+         <p>${description}</p>
+         <a href="#" class="button-more">Leer más</a>
+         <br>
+          <section id="sectionIcon_article">
+                <i class="fas fa-trash-alt icon-edit-delet"></i>
+                <i class="fas fa-edit icon-edit-delet"></i>
+          </section>
+    </section> 
+    
+    <br>
 
-  
-   
-   var datos_obtenidos = JSON.parse(localStorage.getItem("article"));
+    
+    ` ;
+    
+  }
 
-   console.log(datos_obtenidos);
+  function watchTask() {
+    
+    var task = firebase.database().ref("task/");
+
+    task.on("child_added", function(data){
+
+      var taskValue = data.val();
+      var result = article(taskValue.id, taskValue.description);
+      innerHTML("posts", result);
+    });
+  }
 
 
-   for (var i in localStorage) {
 
-     var post = `
-     <section class="post">
-     <h2>${article.title}</h2>
-     <small class="fecha">${article.date}</small>
-     <p>${article.content}</p>
-     <a href="#" class="button-more">Leer más</a>
-     </section>
-     
-     `;     
-     $('#posts').append(post);//Muestra los articulos en el body
-     
-     
-   };
-
-   return false;
-  });
-  
-  
+  // e.preventDefault();
+  // var article = 
+  //  {
+    //    title:$('input[name="titulo"]').val(),
+    //    date: 'Publicado el ' + moment().date() + ' de ' + moment().format('MMMM YYYY') + '<br>' + 'a las ' + moment().format('h:mm a') , //libreria moment js
+    //    content:$('textarea[name="contenido"]').val()  
+    
+    //  };
+    
+    //  var enviado_json = localStorage.setItem("article", JSON.stringify(article));
+    
+    //  console.log(enviado_json);
+    
+    //  var datos_obtenidos = JSON.parse(localStorage.getItem("article"));
+    //  console.log(datos_obtenidos);
+    //  for (var i in localStorage) {
+      //    var post = `
+      //    <section class="post">
+      //    <h2>${article.title}</h2>
+      //    <small class="fecha">${article.date}</small>
+      //    <p>${article.content}</p>
+      //    <a href="#" class="button-more">Leer más</a>
+      //    </section>
+      //    `;     
+      //    $('#posts').append(post);//Muestra los articulos en el body
+      
+      //  };
+      //  return false;
+    
+    
+    // Toggle menu - responsive 
+    $('#toggle').click(function(){
+         $(this).toggleClass('on');
+         $('#resize').toggleClass('active');
+    });
+    
+    
+    
   
 
 /* 1.7 SELECTOR DE TEMAS */
@@ -77,6 +171,8 @@ $('#publicar-articulo form').submit(function(e){
 
 /* 1.8 SCROLL GO UP*/
 
+  
+
 $('.subir').click(function(e){
   e.preventDefault();
 
@@ -85,8 +181,10 @@ $('.subir').click(function(e){
    }, 'slow' );
 
    return false;
-});
 
+  });
+ 
+  
 
 
 

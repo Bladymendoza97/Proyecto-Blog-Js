@@ -28,12 +28,12 @@
 <title>Proyecto Completo con JS, HTML, CSS, JQUERY</title>
 </head>
  
-<body style="background-image:url(img/pexels-photo-733475.jpeg)">
+<body style="background-image:url(img/pexels-photo-733475.jpeg)" onload="watchTask()">
      
 <!-- 1.0 ESTRUCTRURA HTML -->
 
 
-<!-- 1.1 MAQUETACION DE LA CABECERA-->
+<!-- 1.1 MAQUETACION D E LA CABECERA-->
 <!-- css externo -->
 
 <main id="global">
@@ -141,26 +141,23 @@
            
           <article id="posts" class="borde-article col-sm-6 col-md-6">
 
-                    <section class="post">
+                          <section class="post">
                               <h2>Angular Cli</h2>
                               <small class="fecha"> Publicado el 17 de enero 2019</small>
                               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, facilis labore natus consectetur autem sit omnis dolor maxime nulla laudantium itaque sed ipsa eos iusto sint commodi quis asperiores tempore laboriosam assumenda dolorem id. Hic provident quaerat minima, excepturi soluta culpa dolore ex harum illum, corrupti libero recusandae molestias fugit atque, veritatis sequi ut minus nesciunt doloribus? Culpa quam dolore quas reiciendis ratione! Blanditiis facilis quis quia laboriosam. Facilis molestias consectetur consequuntur accusamus est adipisci ducimus voluptate eos, nobis quam natus doloremque. Molestiae, molestias omnis?</p>
                               <a href="#" class="button-more">Leer más</a>
-                          </section>
+                              <br>
+                              <section id="sectionIcon_article">
+                                   <i class="fas fa-trash-alt icon-edit-delet"></i>
+                                   <i class="fas fa-edit icon-edit-delet"></i>
+                              </section>
+
+                    </section>
 
                 <br>
-               <article id="posts" class="second-p">
-     
-                         <section class="post">
-                                   <h2>Node Js</h2>
-                                   <small class="fecha"> Publicado el 17 de enero 2019</small>
-                                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, facilis labore natus consectetur autem sit omnis dolor maxime nulla laudantium itaque sed ipsa eos iusto sint commodi quis asperiores tempore laboriosam assumenda dolorem id. Hic provident quaerat minima, excepturi soluta culpa dolore ex harum illum, corrupti libero recusandae molestias fugit atque, veritatis sequi ut minus nesciunt doloribus? Culpa quam dolore quas reiciendis ratione! Blanditiis facilis quis quia laboriosam. Facilis molestias consectetur consequuntur accusamus est adipisci ducimus voluptate eos, nobis quam natus doloremque. Molestiae, molestias omnis?</p>
-                                   <a href="#" class="button-more">Leer más</a>
-                               </section>
 
-                               <br>
-     
-               </article>
+                <p></p>
+      
                
           </article>
  
@@ -215,10 +212,10 @@
                               <h4 style="background-image:url(img/lines.png)"><span>Publicar Artículo</span></h4>
                                   <form action="" id="publicar">
                                          <label for="" class="title-login">Título</label>
-                                         <input type="text" name="titulo" class="form-control">
+                                         <input type="text" name="titulo" class="form-control" id="id">
 
                                          <label for="" class="title-login">Contenido</label>
-                                         <textarea type="text" name="contenido" class="md-textarea form-control" rows="3"></textarea>
+                                         <textarea type="text" name="contenido" class="md-textarea form-control" rows="3" id="description"></textarea>
                    
                                          <input type="submit" value="Publicar" class="button-more" id="button-publicar-articulo">
                    
@@ -258,6 +255,7 @@
 <!-- Swiper Slider  js-->
 
 <script src="Js/swiper.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.8.0/firebase.js"></script>
 <script src="Js/app.js"></script>
 
 

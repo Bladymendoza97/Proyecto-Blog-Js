@@ -273,6 +273,9 @@ nav #menu li:hover{
   margin-bottom: 16px;
 }
 
+.post{
+  border-bottom: 1px solid #d2d2d2;  
+}
 .post h2 {
   font-size: 2.6rem !important;
   color: #333 !important;
@@ -318,6 +321,45 @@ nav #menu li:hover{
   justify-content: center;
   align-items: center;
 }
+
+#sectionIcon_article{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+
+}
+
+.icon-edit-delet{
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  font-size: 2.2rem;
+  margin: 9px;
+  color: #333;
+  transition: all 0.5s;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius:20px;
+}
+
+.icon-edit-delet:hover{
+  background: #d2d2d2 !important;
+  transition: all 0.5s;
+
+}
+
+@media (max-width: 768px){
+  #sectionIcon_article{
+
+  margin-top: 15px;
+
+  }
+  .icon-edit-delet{
+    margin: 4px;
+  }
+}
+
 
 /* 1.4 MAQUETAR SIDEBAR */
 
@@ -546,6 +588,6 @@ footer small{
 
 
  /* 2.2 CONTACT SECTION */
- #title-contact{
+ #title-contact, #title-about{
    border-bottom:1px solid #d2d2d2;
  }
