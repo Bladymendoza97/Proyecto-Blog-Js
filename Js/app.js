@@ -1,6 +1,7 @@
 'use strict'
  
 
+if (window.location.href.indexOf('index') > -1) {
   
   // Initialize Firebase
   var config = {
@@ -12,6 +13,7 @@
    messagingSenderId: "297787975019"
  };
  firebase.initializeApp(config);
+}
 
 /* 1.6 LISTADO DINAMICO ARTICULOS */
 
