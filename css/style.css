@@ -17,7 +17,6 @@ body {
 #global {
   width: 75%;
   margin: 0px auto;
-  /* margin-top: 30px; */
   padding: 15px 30px !important;
   background: #eaeaea;
   opacity: 0.7;
@@ -44,42 +43,7 @@ h1 {
 
 /* 1.2 MAQUETACION DEL MENU CSS */
 
-/* #menu {
-  background: #333;
-  width: 100%;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-#menu ul {
-  display: flex;
-  list-style: none;
-  justify-content: space-around;
-  align-items: center !important;
-  height: 50px;
-  transition: all 0.5s;
-  margin: 0px;
-} */
-/* #menu ul li:hover {
-  background: #235e3d !important;
-} */
-
-/* #menu a {
-  text-decoration: none;
-  color: #eaeaea;
-  font-weight: 700;
-} */
-
-/* .content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.content h3{
-
-} */
+ 
 
 nav {
   width: 100%;
@@ -386,7 +350,6 @@ nav #menu li:hover{
   line-height: 10px !important;
   color: #333 !important;
   font-size: 2.2rem;
-  /* background: url("img/lines.png") repeat-x !important; */
 }
 
 #sidebar h4 span {
@@ -529,9 +492,7 @@ footer small{
   }
 }
 
-
 /* 2.0 ACORDEON */
-
 
 .collapse-card {
   background-color: white !important;
@@ -585,8 +546,6 @@ footer small{
    
   }
 }
-
-
 
  /* 2.2 CONTACT SECTION */
  #title-contact, #title-about{

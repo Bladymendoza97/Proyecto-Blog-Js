@@ -34,7 +34,6 @@ function innerHTML(name, result){
   return document.getElementById(name).innerHTML += result;
 }
 
-
 function arrayJSON(name, description){
   var data = {
  
@@ -112,7 +111,6 @@ $('#publicar-articulo form').submit(function(){
     
     <br>
 
-    
     ` ;
     
   }
@@ -183,22 +181,7 @@ $('#publicar-articulo form').submit(function(){
     
     
     
-  
-
-/* 1.7 SELECTOR DE TEMAS */
-
-
-// var theme = $('#theme'); 
-// $('#to-green').click(function(){
-//    theme.attr('href', 'css/green.css')
-// });
-
-// $('#to-blue').click(function(){
-//   theme.attr('href', 'css/blue.css')
-// });
-
-
-
+ 
 
 /* 1.8 SCROLL GO UP*/
 
@@ -269,16 +252,8 @@ $('#logout').click(function(){
   alert('Sessión Finalizada')
 });
 
-// Swal({
-  //   position: 'center',
-  //   type: 'success',
-  //   title: 'Sessión finalizada',
-  //   showConfirmButton: false,
-  //   timer: 3000
-  // })
  
-
-/* 2.0 ACORDEON*/
+ 
 
 /*2.1 RELOJ DINAMICO*/ 
 if (window.location.href.indexOf('contacto') > -1) {
