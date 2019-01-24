@@ -1,48 +1,47 @@
 'use strict'
  
 
-
- // Initialize Firebase
- var config = {
-  apiKey: "AIzaSyDkHeZiIg5z0BdQS1buHEOhCjV8M36G6fQ",
-  authDomain: "pruebaarticulos.firebaseapp.com",
-  databaseURL: "https://pruebaarticulos.firebaseio.com",
-  projectId: "pruebaarticulos",
-  storageBucket: "pruebaarticulos.appspot.com",
-  messagingSenderId: "297787975019"
-};
-firebase.initializeApp(config);
-
-
-
-
+if (window.location.href.indexOf('index') > -1) {
+  
+  // Initialize Firebase
+  var config = {
+   apiKey: "AIzaSyDkHeZiIg5z0BdQS1buHEOhCjV8M36G6fQ",
+   authDomain: "pruebaarticulos.firebaseapp.com",
+   databaseURL: "https://pruebaarticulos.firebaseio.com",
+   projectId: "pruebaarticulos",
+   storageBucket: "pruebaarticulos.appspot.com",
+   messagingSenderId: "297787975019"
+ };
+ firebase.initializeApp(config);
+}
 
 /* 1.6 LISTADO DINAMICO ARTICULOS */
 
-function getID(id){
+function getID(name){
   
-  return document.getElementById(id).value;
-  
-}
-
-function inputsTask(id, result){
-
-  return document.getElementById(id).value = result;
+  return document.getElementById(name).value;
   
 }
 
-function innerHTML(id, result){
+function inputsTask(name, result){
+
+  return document.getElementById(name).value = result;
   
-  return document.getElementById(id).innerHTML += result;
+}
+
+function innerHTML(name, result){
+  
+  return document.getElementById(name).innerHTML += result;
 }
 
 
-function arrayJSON(id, description){
+function arrayJSON(name, description){
   var data = {
-   
-    id : id,
+ 
+    name : name,
     description : description
   };
+
 
   return data;
 }
@@ -54,18 +53,33 @@ $('#publicar-articulo form').submit(function(){
   
   function insertTask() {
     
-    var id = getID("id");
+    var name = getID("name");
     var description = getID("description");
   
-    if (id.length == 0 || description.length == 0) {
-      alert('Estos campos están vacíos')
+    if (name.length == 0 || description.length == 0) {
+
+      Swal({
+    position: 'center',
+    type: 'error',
+    title: 'Estos Campos están Vacíos!',
+    showConfirmButton: false,
+    timer: 3000
+  });
     }else{
-      var arrayData = arrayJSON(id, description);
+      var arrayData = arrayJSON(name, description);
      
-      var task = firebase.database().ref("task/" + id);
+      var task = firebase.database().ref("task/"+name);
       task.set(arrayData);
-      alert('Ha sido guardado correctamente');
-      inputsTask("id", "");
+
+      swal({
+        position: 'center',
+        type: 'success',
+        title: 'Buen trabajo!',
+        text: 'Artículo Publicado!',
+        showConfirmButton: false,
+        timer: 3000
+      });
+      inputsTask("name", "");
       inputsTask("description", "");
 
     }
@@ -78,18 +92,21 @@ $('#publicar-articulo form').submit(function(){
 });
 
 
-  function article(id, description) {
+  function article(name, description) {
 
+    var date ='Publicado el ' + moment().date() + ' de ' + moment().format('MMMM YYYY') + '<br>' + 'a las ' + moment().format('h:mm a'); //libreria moment js
+    
     return  `
    
     <section class="post">
-         <h2>${id}</h2>
+         <h2>${name}</h2>
+         <small class="fecha">${date}</small>
          <p>${description}</p>
          <a href="#" class="button-more">Leer más</a>
          <br>
           <section id="sectionIcon_article">
-                <i class="fas fa-trash-alt icon-edit-delet"></i>
-                <i class="fas fa-edit icon-edit-delet"></i>
+                <i class="fas fa-trash-alt icon-edit-delet" onclick="remove(name)"></i>
+                <i class="fas fa-edit icon-edit-delet" onclick="editTask(name)"></i>
           </section>
     </section> 
     
@@ -107,11 +124,25 @@ $('#publicar-articulo form').submit(function(){
     task.on("child_added", function(data){
 
       var taskValue = data.val();
-      var result = article(taskValue.id, taskValue.description);
+      var result = article(taskValue.name, taskValue.description);
       innerHTML("posts", result);
     });
+
   }
 
+  function editTask(name, description){
+    inputsTask("name", name);
+    inputsTask("description", description);
+
+  }
+
+  function remove(name){
+
+    var task = firebase.database().ref("task/" + name)
+    task.remove();
+    location.reload();
+
+  }
 
 
   // e.preventDefault();
@@ -250,6 +281,7 @@ $('#logout').click(function(){
 /* 2.0 ACORDEON*/
 
 /*2.1 RELOJ DINAMICO*/ 
+if (window.location.href.indexOf('contacto') > -1) {
 
 $(document).ready(function(){
 
@@ -263,6 +295,6 @@ $(document).ready(function(){
 });
 
 
-
+}
 
  
